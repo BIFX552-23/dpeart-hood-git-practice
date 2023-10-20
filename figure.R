@@ -9,5 +9,8 @@ set.seed(298347)
 dat <- tibble(x = rnorm(100), 
               y = x + rnorm(100, sd = 0.2))
 
-ggplot(dat, aes(x, y))+
+g1<-ggplot(dat, aes(x, y))+
   geom_point() + geom_smooth(method = "lm")
+
+ggsave('figure.png', g1)
+
